@@ -9,7 +9,7 @@ public class Servicio implements Propuesta {
 
     public Servicio(String nombre, Double precio) {
         this.nombre = nombre;
-        this.precio = (precio);
+        this.setPrecio(precio);
     }
 
     public void setPrecio(Double precio) {
