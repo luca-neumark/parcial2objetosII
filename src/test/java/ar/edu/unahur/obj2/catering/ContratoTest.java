@@ -49,4 +49,13 @@ public class ContratoTest {
 
         assertEquals("Menú Parrillero + Mozos adicionales", descripcion);
     }
+
+    @Test
+    public void dadoUnContratoCreado_alActualizarElPrecioDeUnServicio_elImporteContratadoNoCambia() {
+        Contrato contrato = new Contrato("Lucía", menuParrillero);
+
+        parrilladaCompleta.setPrecio(260000.0);
+
+        assertEquals(342000.0, contrato.getImporte());
+    }
 }
