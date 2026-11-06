@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.unahur.obj2.catering.excepciones.DescuentoInvalidoException;
+import ar.edu.unahur.obj2.catering.excepciones.PropuestaNoIncluidaException;
 
 public class Menu implements Propuesta {
 
@@ -22,6 +23,14 @@ public class Menu implements Propuesta {
 
     public void agregar(Propuesta propuesta) {
         this.componentes.add(propuesta);
+    }
+
+    public void quitar(Propuesta propuesta) {
+        if (!this.componentes.contains(propuesta)) {
+            throw new PropuestaNoIncluidaException(
+                    "La propuesta " + propuesta.getDescripcion() + " no es componente directo de " + this.nombre);
+        }
+        this.componentes.remove(propuesta);
     }
 
     @Override 

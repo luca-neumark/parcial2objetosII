@@ -8,10 +8,14 @@ public class Servicio implements Propuesta {
     private Double precio;
 
     public Servicio(String nombre, Double precio) {
+        this.nombre = nombre;
+        this.precio = (precio);
+    }
+
+    public void setPrecio(Double precio) {
         if (precio < 0) {
             throw new PrecioNegativoException("El precio no puede ser negativo: " + precio);
         }
-        this.nombre = nombre;
         this.precio = precio;
     }
 
